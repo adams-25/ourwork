@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Navigation Menu</title>
+  <!-- Font Awesome for Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+ 
+  <script src="script.js"></script>
+
+</head>
+<body>
+ 
+  <button id="add-to-cart" style="top: 0px; left: 15px; width: 180px; height: 40px;">
+    <i class="fa fa-cart-plus"></i>Add to Cartssss
+  </button>
+  
+  <ul class="menu" >
+    
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+
+
+
+<div class="containerBox" style="top: 150px;">
+ 
+    <div class="left-panel">
+
+        <div id="treeviewContainer">
+        <ul id="treeview">
+            <li>
+                <span class="node" onclick="toggleNode(this)">Projects</span>
+                <ul class="nested">
+                    <li><span class="node" onclick="showNodeMessage(this)">ProjectOne</span></li>
+                    <li><span class="node" onclick="showNodeMessage(this)">ProjectTwo</span></li>
+                    <li><span class="node" onclick="showNodeMessage(this)">ProjectThree</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    </div>
+    
+
+    <!-- Right Panel -->
+    <div class="right-panel" style="height: 250px;">
+      
+        <div class="frame-container" style="height: 250px;"> 
+          
+
+          <div  class="centralize" style="height: 250px;">
+            <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Calls to subaddinput here
+
+            subaddinput(15, 5, 250, "1", "Vendor ", "text","bt1");
+            subaddinput(55, 5, 250, "8", "V.Addrs", "text","bt2");
+            subaddinput(85, 5, 250, "37", "Tele", "text","bt3");
+
+            subaddinput(120, 5, 150, "2", "Quo. No", "text","bt4");
+            subaddinput(155, 5, 150, "2", "Consultant", "text","bt5");
+            
+            subaddinput(190, 5, 300, "3", "Project", "text","bt6");
+            subaddinput(15, 270, 150, "4", "Date", "text","bt7");
+            subaddinput(50, 270, 150, "4", "LPO No", "text","bt8");
+           
+            
+            subaddinput(15, 480, 100, "4", "Chqs", "text","bt9");
+            subaddinput(50, 480, 100, "4", "Invs", "text","bt10");
+            subaddinput(85, 480, 100, "3", "Blnc", "text","bt11");
+          });
+  
+
+              </script>
+         
+        
+<label id="lblrow" style="top: 335px; left: 700px; width: 200px; height: 200px; position: absolute; ">x</label>
+</div>
+
+
+
+
+
+
+
+
+<!-- partial:index.partial.html -->
+
+
+<button onclick="saveDataAndPrint()" class="red" style="top: 5px; left: 700px; width: 100px;height: 40px">
+  <i class="fa fa-plus-circle"></i>New
+</button>
+
+
+<button onclick="saveDataAndPrint()" class="green" style="top: 55px; left: 700px; width: 100px;height: 40px">
+  <i class="fa fa-plus-circle"></i>Save
+</button>
+
+<button onclick="saveDataAndPrint()" class="green5" style="top: 5px; left: 800px; width: 100px;height: 40px">
+  <i class="fa fa-plus-circle"></i>Edit
+</button>
+</button>
+<button onclick="saveDataAndPrint()" class="green6" style="top: 55px; left: 800px; width: 105px;height: 40px">
+<i class="fa fa-plus-circle"></i>Delete
+</button>
+
+</div>
+
+
+ 
+     
+        <div class="frame-container" style="height: auto;">
+
+      <div class="container">
+   
+        <table id="listViewtbl" style="color: blue;">
+          <thead >
+            <tr >
+              <th style="width: 30px; text-align: center; color: rgb(14, 1, 1);font-weight: bold; font-size: 18px;">M</th>
+              <th style="width: 300px;text-align: center; color: rgb(14, 1, 1);font-weight: bold; font-size: 18px;">Desc</th>
+              <th style="width: 100px;text-align: center; color: rgb(14, 1, 1);font-weight: bold; font-size: 18px;" >QTy</th>
+              <th style="width: 100px;text-align: center; color: rgb(14, 1, 1);font-weight: bold; font-size: 18px;">Rate</th>
+              <th style="width: 100px;text-align: center; color: rgb(14, 1, 1);font-weight: bold; font-size: 18px;" >Amount</th>
+            </tr>
+          </thead>
+          <tbody>
+           
+          </tbody>
+        </table>
+      </div>
+      <div id="tableContainer"></div>
+     
+
+    </div>  
+
+  </div>
+ 
+         <div class="right-panel2">
+          
+  
+
+          <div id="pdf-viewer-container" >
+              <iframe id="pdf-viewer" style="margin-left: 0%; position: absolute;" ></iframe>
+          </div>
+            </div>
+
+            <button id="open-inv-btn">Open Treeview</button> 
+    
+    
+            <script>
+ 
+ function createTable() {
+    const tableContainer = document.getElementById("tableContainer");
+    const table = document.createElement("table");
+    table.classList.add("table", "table-condensed", "table-hover", "table-striped", "bootgrid-table");
+    
+    // Create the header row
+    const thead = table.createTHead();
+    const headerRow = thead.insertRow();
+    const headerCell1 = headerRow.insertCell();
+    headerCell1.textContent = "Contract Value";
+
+    const headerCell2 = headerRow.insertCell();
+    headerCell2.textContent = "25003330";
+    headerRow.style.color="rgb(13, 32, 196)";
+    headerRow.style.fontWeight = "900";
+    headerRow.style.fontSize="25px";
+ 
+
+    // Create the table body with 10 rows
+    const tbody = table.createTBody();
+    for (let i = 0; i < 15; i++) {
+        const row = tbody.insertRow();
+
+        row.style.color = "rgb(13, 32, 196)";
+        row.style.fontWeight = "800";
+        row.style.backgroundColor=  "rgba(13,55, 255, .3)"
+
+
+        const cell1 = row.insertCell();
+        cell1.style.padding = "0";
+        cell1.style.width = "auto";
+        cell1.contentEditable = true;
+
+    
+
+        // Create the second cell with input field
+        const cell2 = row.insertCell();
+        cell2.style.padding = "5px";
+        cell2.style.width = "230px";
+        cell2.style.height = "40px";
+    
+        const input = document.createElement("input");
+        input.type = "number";
+        input.classList.add("secondCell");
+        input.style.fontSize = "14px";
+            input.style.fontWeight = "800";
+            input.style.textAlign = "center"; // Align text to the center
+            input.style.color="blue";
+
+
+        if (i === 11) {
+            input.id = 'row11';
+            row.style.backgroundColor = "rgba(735,55, 255, .3)";
+            input.style.background="rgba(35,55, 255, .3)";
+            input.style.fontSize = "14px";
+            input.style.fontWeight = "800";
+            input.style.textAlign = "center"; // Align text to the center
+
+        } else if (i === 12) {
+            input.id = 'row12';
+            row.style.backgroundColor = "rgba(735,55, 255, .3)";
+            input.style.background="rgba(35,55, 255, .3)";
+        } else if (i === 14) {
+            input.id = 'row14';
+            row.style.backgroundColor = "rgba(735,55, 255, .3)";
+            input.style.background="rgba(35,55, 255, .3)";
+
+          } else if (i === 13) {
+            input.id = 'row13';
+            row.style.backgroundColor = "rgba(735,55, 255, .3)";
+            input.style.background="rgba(35,55, 255, .3)";
+
+            
+        } else {
+            input.id = `row${i}`;  // For other rows, assign ids like 'row1', 'row2', etc.
+        }
+
+    
+
+
+        input.oninput = function() {
+            updateValues();  // Your update logic goes here
+        };
+        cell2.appendChild(input);
+    }
+
+    // Append the table to the container
+    tableContainer.innerHTML = "";
+    tableContainer.appendChild(table);
+
+    
+}
+
+function createTable2() {
+    const tableContainer = document.getElementById("tableContainer");
+    const table = document.createElement("table");
+    table.classList.add("table", "table-condensed", "table-hover", "table-striped", "bootgrid-table");
+    
+    // Create the header row
+    const thead = table.createTHead();
+    const headerRow = thead.insertRow();
+    headerRow.style.color="rgb(13, 32, 196)";
+    headerRow.style.fontWeight = "900";
+    headerRow.style.fontSize="25px";
+
+
+    for (let i = 0; i < 2; i++) {
+    const headerCell = headerRow.insertCell();  // Insert a new header cell
+    // Optionally, add content or style to each header cell here
+}
+headerRow.cells[0].colSpan = 6; 
+headerRow.cells[0].textContent="Contract Value ";
+headerRow.cells[0].style.textAlign="right";
+headerRow.cells[1].textContent="25,000.00 ";
+headerRow.cells[1].style.textAlign="center";
+
+
+
+    // Create the table body with 10 rows
+    const tbody = table.createTBody();
+    for (let i = 0; i < 15; i++) {
+        const row = tbody.insertRow();
+
+        row.style.color = "rgb(13, 32, 196)";
+        row.style.fontWeight = "800";
+        row.style.backgroundColor=  "rgba(13,55, 255, .3)"
+
+
+        for (let i = 0; i < 6; i++) {
+    const cellx = row.insertCell();  // Create a new cell
+    cellx.style.padding = "0";       // Set padding
+    cellx.style.width = "90px";      // Set width
+    cellx.contentEditable = true;   // Make the cell editable
+}
+    
+
+
+
+
+        // Create the second cell with input field
+        const cell2 = row.insertCell();
+        cell2.style.padding = "5px";
+        cell2.style.width = "230px";
+        cell2.style.height = "40px";
+    
+        const input = document.createElement("input");
+        input.type = "number";
+        input.classList.add("secondCell");
+        input.style.fontSize = "14px";
+            input.style.fontWeight = "800";
+            input.style.textAlign = "center"; // Align text to the center
+            input.style.color="blue";
+
+
+        if (i === 11) {
+            input.id = 'row11';
+            row.style.backgroundColor = "rgba(735,55, 255, .3)";
+            input.style.background="rgba(35,55, 255, .3)";
+            input.style.fontSize = "14px";
+            input.style.fontWeight = "800";
+            input.style.textAlign = "center"; // Align text to the center
+
+        } else if (i === 12) {
+            input.id = 'row12';
+            row.style.backgroundColor = "rgba(735,55, 255, .3)";
+            input.style.background="rgba(35,55, 255, .3)";
+        } else if (i === 14) {
+            input.id = 'row14';
+            row.style.backgroundColor = "rgba(735,55, 255, .3)";
+            input.style.background="rgba(35,55, 255, .3)";
+
+          } else if (i === 13) {
+            input.id = 'row13';
+            row.style.backgroundColor = "rgba(735,55, 255, .3)";
+            input.style.background="rgba(35,55, 255, .3)";
+
+            
+        } else {
+            input.id = `row${i}`;  // For other rows, assign ids like 'row1', 'row2', etc.
+        }
+
+    
+
+
+        input.oninput = function() {
+            updateValues();  // Your update logic goes here
+        };
+        cell2.appendChild(input);
+    }
+
+    // Append the table to the container
+    tableContainer.innerHTML = "";
+    tableContainer.appendChild(table);
+
+    const values = ['NO', 'Description', 'Percentage', 'Value', 'Work done','Percentage', 'Value'];  // Array with values
+    // Array of values
+    const firstRow = table.rows[1]
+
+    for (let io = 0; io < 7; io++) {
+
+    firstRow.cells[io].style.background = "rgba(35,55, 255, .3)";  // Set background color
+    firstRow.cells[io].textContent = values[io];  // Set text content from the array
+    firstRow.cells[io].style.textAlign = "center";  // Align text to center
+    firstRow.cells[io].style.fontSize = "16px";
+    firstRow.cells[io].style.fontWeight = "900";
+    firstRow.cells[io].style.color = "Black";
+
+}
+const values2 = ['no', 1, 2, 3, 4, 5, 6, 7];  // Array with values
+
+Array.from(table.rows).slice(1).forEach((row, index) => {  // Exclude the first row (header)
+    row.cells[0].style.width = "20px";  // Set the width of the first cell
+    row.cells[0].textContent = values2[index];  // Set the text content from the array
+    row.cells[0].style.fontSize = "14px";  // Set font size
+    row.cells[0].style.fontWeight = "700";  // Set font weight
+    row.cells[0].style.textAlign = "center";  // Align text to center
+});
+
+
+}
+
+
+
+function updateValues() {
+       
+            let totalRow11 = 0;
+            let row11Value = 0;
+            let row12Value = 0;
+            let row13Value = 0;
+          
+            // Sum of all second cells from row 1 to row 10
+            const secondCells = document.querySelectorAll('.secondCell');
+            secondCells.forEach((cell, index) => {
+              if (index < 10) {  // Only sum the second cells from row 1 to 10
+                totalRow11 += parseFloat(cell.value) || 0;
+              }
+            
+            });
+        
+           
+
+
+          
+
+            // Set row 11 (sum of all second cells from rows 1 to 10)
+            document.getElementById('row11').value = totalRow11;
+     
+            // Set row 12 (5% of the value in row 11)
+            row11Value = totalRow11 * 0.05;
+            document.getElementById('row12').value = row11Value;
+        
+            // Set row 14 (sum of rows 11, 12, and 13)
+            row13Value = parseFloat(secondCells[13].value) || 0; // Get second cell value of row 13 (11th second cell)
+            let row14Value = totalRow11 + row11Value + row13Value;
+            document.getElementById('row14').value = row14Value;
+          }
+     
+
+
+
+
+          
+
+
+
+
+
+        function subaddinput(top, left, width, dataTag, label, type,BID) {
+    // Create the input block container
+    var inputBlock = document.createElement("div");
+    inputBlock.classList.add("input-block");
+
+    
+    // Set the position based on top, left, and width
+    inputBlock.style.position = "absolute";
+    inputBlock.style.top = top + "px";
+    inputBlock.style.left = left + "px";
+    inputBlock.style.width = width + "px";
+  
+
+    // Create the input element
+    var input = document.createElement("input");
+    input.type = type; // 'text', 'number', 'date', etc.
+    input.classList.add("input-field");
+    input.placeholder = " ";
+    input.setAttribute("data-tag", dataTag);
+    input.style.width = `${width}px`;
+    input.id=BID;
+
+    // Create the label element
+    var labelSpan = document.createElement("span");
+    labelSpan.classList.add("placeholder");
+    labelSpan.textContent = label;
+
+    // Append input and label to the container
+    inputBlock.appendChild(input);
+    inputBlock.appendChild(labelSpan);
+
+    // Append the new input block to the container (you can change "input-container" to your preferred element)
+    document.querySelector(".frame-container").appendChild(inputBlock);
+  }
+
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const tbody = document.querySelector('#listViewtbl tbody');
+
+    // Function to convert numbers to words
+    function numberToWords(num) {
+    const ones = [
+        '', 'One', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten',
+        'Eleven', 'Twelve', 'Thirteen', 'Fourteen', 'Fifteen', 'Sixteen', 'Seventeen', 'Eighteen', 'Nineteen'
+    ];
+    const tens = [
+        '', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'
+    ];
+    const thousands = ['', 'Thousand', 'Million', 'Billion'];
+
+    // Split the number into whole and decimal parts
+    const [wholePart, decimalPart] = num.toFixed(2).split('.');
+
+    let word = '';
+    let i = 0;
+
+    let wholeNum = parseInt(wholePart, 10);
+
+    // If wholeNum is 0 and decimalPart is greater than 0, return "Zero Dirham" and the decimal part
+    if (wholeNum === 0 && parseInt(decimalPart) > 0) {
+        word = 'Zero Dirham and ' + helper(parseInt(decimalPart)) + ' Fils';
+        return word.trim();
+    }
+
+    // Convert the whole part of the number
+    while (wholeNum > 0) {
+        if (wholeNum % 1000 !== 0) {
+            word = helper(wholeNum % 1000) + thousands[i] + ' ' + word;
+        }
+        wholeNum = Math.floor(wholeNum / 1000);
+        i++;
+    }
+
+    // Add "Dirham" for the whole part
+    word = word.trim() + " Dirham";
+
+    // Convert the decimal part (if any) and append "fils"
+    if (parseInt(decimalPart) > 0) {
+        word += " and " + helper(parseInt(decimalPart)) + " Fils";
+    }
+
+    return word.trim();
+
+    function helper(num) {
+        let str = '';
+        if (num >= 100) {
+            str += ones[Math.floor(num / 100)] + ' Hundred ';
+            num %= 100;
+        }
+        if (num >= 20) {
+            str += tens[Math.floor(num / 10)] + ' ';
+            num %= 10;
+        }
+        if (num > 0) {
+            str += ones[num] + ' ';
+        }
+        return str;
+    }
+}
+
+
+
+
+    let col5ValueLine21 = 0;
+    let col5ValueLine22 = 0;
+
+    for (let i = 1; i <= 23; i++) {
+        const row = document.createElement('tr');
+
+        // Column 1: M
+        const col1 = document.createElement('td');
+        col1.textContent = i; // Add row number
+        row.appendChild(col1);
+  
+        // Column 2: Desc (Editable)
+        const col2 = document.createElement('td');
+        const descInput = document.createElement('input');
+        descInput.type = 'text';
+        descInput.style.width = '100%';
+        descInput.style.backgroundColor = 'rgba(255,255,255,0.7)'; 
+        descInput.style.color = '#2E08B8';
+        descInput.style.fontSize = '14px';
+        descInput.style.fontWeight = 'bold';
+        descInput.style.textAlign = 'left';
+        col2.appendChild(descInput);
+        row.appendChild(col2);
+        descInput.style.height="20px";
+      
+     
+        // Column 3: QTy (Editable)
+        const col3 = document.createElement('td');
+        const qtyInput = document.createElement('input');
+        qtyInput.type = 'number';
+        qtyInput.style.width = '100%';
+        qtyInput.style.backgroundColor = 'rgba(255,255,255,0.7)'; 
+        qtyInput.style.color = '#2E08B8';
+        qtyInput.style.fontSize = '14px';
+        qtyInput.style.fontWeight = 'bold';
+        qtyInput.style.textAlign = 'center';
+        qtyInput.step = 'any';
+        col3.appendChild(qtyInput);
+        row.appendChild(col3);
+        qtyInput.style.height="20px";
+
+        // Column 4: Rate (Editable)
+        const col4 = document.createElement('td');
+        const rateInput = document.createElement('input');
+        rateInput.type = 'number';
+        rateInput.style.width = '100%';
+        rateInput.style.backgroundColor = 'rgba(255,255,255,0.7)'; 
+        rateInput.style.color = '#2E08B8';
+        rateInput.style.fontSize = '14px';
+        rateInput.style.fontWeight = 'bold';
+        rateInput.style.textAlign = 'center';
+        rateInput.step = 'any';
+        col4.appendChild(rateInput);
+        row.appendChild(col4);
+        rateInput.style.height="20px";
+
+        // Column 5: Amount (Editable)
+        const col5 = document.createElement('td');
+        const amountInput = document.createElement('input');
+        amountInput.type = 'number';
+        amountInput.style.width = '100%';
+        amountInput.style.backgroundColor = '#450808';
+        amountInput.style.color = 'white';
+        amountInput.style.fontSize = '14px';
+        amountInput.style.fontWeight = 'bold';
+        amountInput.style.textAlign = 'center';
+        amountInput.step = 'any';
+        amountInput.readOnly = true; // Make amount readonly
+        col5.appendChild(amountInput);
+        row.appendChild(col5);
+        amountInput.style.height="20px";
+        row.style.height="15px";
+
+        // Event listener to update col5 when col3 or col4 changes
+        const updateAmount = () => {
+    const qty = parseFloat(qtyInput.value) || 0;
+    const rate = parseFloat(rateInput.value) || 0;
+    amountInput.value = (qty * rate).toFixed(2); // Ensure floating-point format
+
+    // Sum all col5 values from lines 1 to 20
+    const totalAmount = Array.from(tbody.querySelectorAll('tr:nth-child(-n+20) td:nth-child(5) input'))
+        .reduce((acc, input) => acc + (parseFloat(input.value) || 0), 0).toFixed(2);
+    
+      
+    // Set the sum value into line 21 col5
+    const line21Col5 = tbody.querySelector('tr:nth-child(21) td:nth-child(5) input');
+    if (line21Col5) {
+        line21Col5.value = totalAmount; // Set the sum in col5 of line 21
+    }
+
+    const line21Col2 = tbody.querySelector('tr:nth-child(21) td:nth-child(2) input');
+if (line21Col2) {
+
+  line21Col2.value = numberToWords(parseFloat(totalAmount));
+}
+
+    // Calculate VAT (5%)
+    const totalvatme = (parseFloat(totalAmount) * 0.05).toFixed(2);
+
+    // Set the VAT value into line 22 col5
+    const line22Col5 = tbody.querySelector('tr:nth-child(22) td:nth-child(5) input');
+    if (line22Col5) {
+        line22Col5.value = totalvatme; // Set the VAT in col5 of line 22
+    }
+
+    const line22Col2 = tbody.querySelector('tr:nth-child(22) td:nth-child(2) input');
+if (line22Col2) {
+
+  line22Col2.value = numberToWords(parseFloat(totalvatme));
+}
+
+    const totalAmountWithVat = (parseFloat(totalAmount) + parseFloat(totalvatme)).toFixed(2);
+
+// Set the Total value into line 23 col5
+const line23Col5 = tbody.querySelector('tr:nth-child(23) td:nth-child(5) input');
+if (line23Col5) {
+    line23Col5.value = totalAmountWithVat; // Set the total in col5 of line 23
+  
+}
+
+const line23Col2 = tbody.querySelector('tr:nth-child(23) td:nth-child(2) input');
+if (line23Col2) {
+
+  line23Col2.value = numberToWords(parseFloat(totalAmountWithVat));
+}
+
+
+
+};
+
+
+// Event listener for pasting data into col2, col3, and col4
+tbody.addEventListener('paste', (event) => {
+    // Get clipboard data
+    tbody.querySelectorAll('tr:nth-child(-n+20) td:nth-child(n+2):nth-child(-n+4) input').forEach(input => input.value = '');
+
+    const clipboardData = event.clipboardData || window.clipboardData;
+    const pastedData = clipboardData.getData('text');
+    
+    // Split pasted data by rows and columns
+    const rows = pastedData.split('\n').map(row => row.split('\t'));
+    
+    // Iterate over the first 20 rows
+    rows.forEach((cells, rowIndex) => {
+        if (rowIndex < 20) {
+            // Column 2 (Description)
+            const col2Input = tbody.querySelector(`tr:nth-child(${rowIndex + 1}) td:nth-child(2) input`);
+            if (col2Input) {
+                col2Input.value = cells[0] || ''; // Use the first cell of the row
+            }
+            
+            // Column 3 (Quantity)
+            const col3Input = tbody.querySelector(`tr:nth-child(${rowIndex + 1}) td:nth-child(3) input`);
+            if (col3Input) {
+                const quantity = parseFloat(cells[1]);
+                col3Input.value = isNaN(quantity) ? '' : quantity; // Validate numeric input
+            }
+            
+            // Column 4 (Rate)
+            const col4Input = tbody.querySelector(`tr:nth-child(${rowIndex + 1}) td:nth-child(4) input`);
+            if (col4Input) {
+                const rate = parseFloat(cells[2]);
+                col4Input.value = isNaN(rate) ? '' : rate; // Validate numeric input
+                updateAmount();
+           
+              }
+        }
+    });
+
+    event.preventDefault(); // Prevent default paste behavior
+});
+
+
+
+// Listen for changes on col3 and col4 and trigger the updateAmount function
+tbody.addEventListener('input', function(event) {
+    if (event.target.tagName.toLowerCase() === 'input') {
+        updateAmount();
+    }
+});
+        qtyInput.addEventListener('input', updateAmount);
+        rateInput.addEventListener('input', updateAmount);
+
+        tbody.appendChild(row);
+
+        // Logic for lines 21, 22, and 23
+        if (i === 21) {
+            // Line 21: "Required"
+            rateInput.type = "text";
+            rateInput.value = "Required";
+            rateInput.style.backgroundColor = '#284B63';
+            rateInput.readOnly = true; // Make it read-only
+            amountInput.style.backgroundColor = '#284B63';
+            qtyInput.style.backgroundColor = '#284B63';
+            descInput.style.backgroundColor = '#284B63';
+            amountInput.type = "number"; // Set to number format
+            rateInput.style.color = 'white';
+            amountInput.style.color = 'white';
+            qtyInput.style.color = 'white';
+            descInput.style.color = 'white';
+            rateInput.style.fontWeight = 'bold';
+            amountInput.style.fontWeight = 'bold';
+            qtyInput.style.fontWeight = 'bold';
+            descInput.style.fontWeight = 'bold';
+
+            amountInput.value = Array.from(tbody.querySelectorAll('tr td:nth-child(5) input'))
+                .reduce((acc, input) => acc + (parseFloat(input.value) || 0), 0).toFixed(2); // Sum of all previous col5 values
+                // Convert to words
+            
+        } else if (i === 22) {
+            // Line 22: "VAT 5%"
+            rateInput.type = "text";
+            rateInput.value = "VAT 5%";
+            rateInput.style.backgroundColor = '#284B63';
+            rateInput.readOnly = true; // Make it read-only
+            amountInput.type = "number"; // Set to number format
+            amountInput.value = (parseFloat(col5ValueLine21) * 0.05).toFixed(2); // 5% of line 21 col5 value
+            amountInput.style.backgroundColor = '#284B63';
+            qtyInput.style.backgroundColor = '#284B63';
+            descInput.style.backgroundColor = '#284B63';
+            rateInput.style.color = 'white';
+            amountInput.style.color = 'white';
+            qtyInput.style.color = 'white';
+            descInput.style.color = 'white';
+            rateInput.style.fontWeight = 'bold';
+            amountInput.style.fontWeight = 'bold';
+            qtyInput.style.fontWeight = 'bold';
+            descInput.style.fontWeight = 'bold';
+            col3.value = numberToWords(parseFloat(amountInput.value)); // Convert to words
+            
+        } else if (i === 23) {
+            // Line 23: "Total"
+            rateInput.type = "text";
+            rateInput.value = "Total";
+            rateInput.style.backgroundColor = '#284B63';
+            rateInput.readOnly = true; // Make it read-only
+            amountInput.style.backgroundColor = '#284B63';
+            qtyInput.style.backgroundColor = '#284B63';
+            descInput.style.backgroundColor = '#284B63';
+            rateInput.style.color = 'white';
+            amountInput.style.color = 'white';
+            qtyInput.style.color = 'white';
+            descInput.style.color = 'white';
+            rateInput.style.fontWeight = 'bold';
+            amountInput.style.fontWeight = 'bold';
+            qtyInput.style.fontWeight = 'bold';
+            descInput.style.fontWeight = 'bold';
+            amountInput.type = "number"; // Set to number format
+            amountInput.value = (parseFloat(col5ValueLine21) + parseFloat(col5ValueLine22)).toFixed(2); // Sum of line 21 and 22 col5 values
+            col3.value = numberToWords(parseFloat(amountInput.value)); // Convert to words
+        }
+    }
+});
+     </script>
+
+
+</body>
+
+
+
+</html>

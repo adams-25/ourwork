@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Performa Invoice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        #header {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 600px;
+            height: 100px;
+            background-image: url('Hdr.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        #footer {
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            width: 100%;
+            height:70px;
+            background-image: url('Ftr.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+         
+        }
+
+        #title {
+            position: absolute;
+            top: 120px;
+            left: 30px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .invoice-label {
+            position: absolute;
+            font-size: 16px;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 600;
+        }
+
+        #invoice-table {
+            position: absolute;
+            top: 300px;
+            left: 10px;
+            width: 90%;
+            border-collapse: collapse;
+        }
+
+        #invoice-table th  {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+        }
+        #invoice-table td{
+            overflow: hidden;
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: center;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        
+        }
+
+        #invoice-table tr{
+ height: 30px;
+ vertical-align: middle;
+        }
+
+
+        #invoice-table td:first-child {
+    width: 100%; /* Set the width of the first column to 100% */
+}
+
+#invoice-table td:nth-child(2) {
+    width: 200px; /* Set the width of the second column to 200px */
+}
+
+        #footer-section {
+            position: absolute;
+            top: 80%;
+            left: 15px;
+            font-size: 14px;
+         
+        }
+
+        #signature-img {
+            position: absolute;
+          bottom: 50px;
+            left: 60px;
+            width: 300px;
+            height: 120px;
+            overflow: hidden;
+         /*  background-image: url('sign.png');*/
+        
+       
+        }
+
+        #signature-img  img {
+        
+          
+            width: 50%;
+            height: 50%;
+            object-fit: cover;
+        }
+
+
+
+        #invoice-table tr:first-child  {
+        
+    background-color: #b6b1b1;
+    color: white;
+   text-align: right;
+    font-weight: 800;
+}
+
+
+
+
+    </style>
+    <script>
+        window.onload = function() {
+            // Retrieve data from localStorage
+            const lbltt  = localStorage.getItem("lbltt");
+            const lbldateString = localStorage.getItem("lbldate");
+            const lblref = localStorage.getItem("lblref");
+            const lblto = localStorage.getItem("lblto");
+            const lblproject = localStorage.getItem("lblproject");
+            const lbltrn = localStorage.getItem("lbltrn");
+            const tableData = JSON.parse(localStorage.getItem("tableData"));
+
+            // Set values to labels
+
+            const lbldate = new Date(lbldateString);
+
+// Manually format the date to DD/MM/YYYY
+
+
+
+
+            document.getElementById("title").textContent  =lbltt;
+            document.getElementById("lbldate").textContent ="Date  :  " + lbldate.toLocaleDateString('en-US');
+            document.getElementById("lblref").textContent ="Ref    :  " + String(lblref);  
+            document.getElementById("lblto").textContent = "To Mr. :  " + String(lblto);   
+            document.getElementById("lblproject").textContent ="Project  :  " + String(lblproject);  
+            document.getElementById("lbltrn").textContent ="AlHazam Trn  :  " + String(lbltrn);  
+
+            // Populate the table with data
+            const tableBody = document.getElementById("invoice-data");
+            tableBody.innerHTML = ""; // Clear existing rows
+
+            tableData.forEach(rowData => {
+                let row = document.createElement("tr");
+                rowData.forEach(cellData => {
+                    let cell = document.createElement("td");
+                    cell.textContent = cellData;
+                    row.appendChild(cell);
+                });
+                tableBody.appendChild(row);
+            });
+        };
+    </script>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="title">Performa Invoice</div>
+
+    <div class="invoice-label" id="lbldate" style="top: 170px; left: 10px;">Date:</div>
+    <div class="invoice-label" id="lblref" style="top: 200px; left: 10px;">Reference:</div>
+    <div class="invoice-label" id="lblto" style="top: 230px; left: 10px;">To:</div>
+    <div class="invoice-label" id="lblproject" style="top: 260px; left: 10px;">Project:</div>
+    <div class="invoice-label" id="lbltrn" style="top: 170px; left: 400px;">Transaction:</div>
+
+    <table id="invoice-table">
+        <thead style="background-color: dimgrey;">
+            <tr>
+          
+ 
+            </tr>
+        </thead>
+        <tbody id="invoice-data">
+            <!-- Dynamic table rows will be added here -->
+        </tbody>
+    </table>
+
+
+
+  
+
+    <div id="footer-section">
+
+        <div>Thanks for your purchase!</div>
+        <div>Accountant Signature:</div>
+        <div id="signature-img">
+            <img src="sign.png" alt="Signature">
+                    </div>
+
+
+                    <div>Bank Account jghjghj67657657657567657 Signature:</div>
+    </div>
+
+    
+    <div id="footer"></div>
+</body>
+</html>

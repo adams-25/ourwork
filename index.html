@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Navigation Menu</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <script src="com.js"></script>
+</head>
+<body>
+ 
+
+  
+  <ul class="menu">
+    <button id="add-to-cart" style="top: 0px; left: 15px; width: 180px; height: 40px;">
+      <i class="fa fa-cart-plus"></i>Add to Cartssss
+    </button>
+
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+
+ 
+
+<div class="containerBox" style="top: 150px;">
+ 
+    <div class="left-panel">
+
+        <div id="treeviewContainer">
+        <ul id="treeview">
+            <li>
+                <span class="node" onclick="toggleNode(this)">Projects</span>
+                <ul class="nested">
+                    <li><span class="node" onclick="showNodeMessage(this)">ProjectOne</span></li>
+                    <li><span class="node" onclick="showNodeMessage(this)">ProjectTwo</span></li>
+                    <li><span class="node" onclick="showNodeMessage(this)">ProjectThree</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    </div>
+    
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+      
+        <div class="frame-container"> 
+          
+
+          <div class="centralize">
+            <script>
+                // Call the function to dynamically add input fields
+                document.addEventListener('DOMContentLoaded', function() {
+    // Calls to subaddinput here
+
+
+  subaddinput(5, 5, 70, "1", "Cont. No", "text");
+subaddinput(5, 75, 70, "8", "Ref.", "text");
+subaddinput(5, 145, 100, "37", "Date", "text");
+
+subaddinput(40, 5, 250, "2", "Owner", "text");
+subaddinput(75, 5, 200, "3", "2nd Name", "text");
+subaddinput(110, 5, 200, "4", "Pro.Details", "text");
+subaddinput(145, 5, 200, "5", "Location", "text");
+subaddinput(205, 240, 100, "6", "Polt", "text");
+subaddinput(40, 270, 70, "10", "Value", "text");
+subaddinput(40, 350, 70, "11", "Variation", "text");
+subaddinput(75, 270, 70, "15", "Advance%", "text");
+subaddinput(75, 350, 70, "14", "Testing%", "text");
+subaddinput(175, 5, 200, "7", "Consultant", "text");
+subaddinput(205, 5, 70, "12", "A/Clpo", "text");
+subaddinput(235, 5, 250, "13", "Notes", "text");
+subaddinput(260, 5, 250, "38", "Files Path", "text");
+subaddinput(205, 100, 100, "16", "Retention %", "text");
+subaddinput(10, 500, 100, "17", "Break Down", "text");
+subaddinput(40, 500, 100, "18", "", "text");
+subaddinput(70, 500, 100, "19", "", "text");
+subaddinput(100, 500, 100, "20", "", "text");
+subaddinput(130, 500, 100, "21", "", "text");
+subaddinput(160, 500, 100, "22", "", "text");
+subaddinput(10, 600, 50, "23", "%", "text");
+subaddinput(40, 600, 50, "24", "%", "text");
+subaddinput(70, 600, 50, "25", "%", "text");
+subaddinput(100, 600, 50, "26", "%", "text");
+subaddinput(130, 600, 50, "27", "%", "text");
+subaddinput(160, 600, 50, "28", "%", "text");
+
+});
+              </script>
+<label id="lblrow" style="top: 335px; left: 700px; width: 200px; height: 200px; position: absolute; ">x</label>
+</div>
+
+
+
+
+
+
+
+
+<!-- partial:index.partial.html -->
+<div class="container">
+
+  
+  <button "add-to-cart" style="top: 330px; left: 5px; width: 180px; height: 40px; display: none;">
+    <i class="fa fa-cart-plus"></i>Add to Cart
+  </button>
+  <br />
+
+  <button "add-to-cart"  style="top: 330px; left: 195px; width: 180px; height: 40px;">
+    <i class="fa fa-cart-plus"></i>Add News
+  </button>
+  <br />
+  <button class="red" id="editProHRow" style="top: 330px; left: 375px; width: 180px; height: 40px;">
+    <i class="fa fa-trash" ></i>Edit  تعديل
+  </button>
+  <br />
+  <button class="green" style="top: 330px; left: 555px; width: 180px; height: 40px;">
+    <i class="fa fa-thumbs-up"></i>Delete
+  </button>
+</div>
+<!-- partial -->
+<div class="listview-container" style="top: 5px; left: 700px; width: 270px; height: 350px; position: absolute; ">
+  <ul id="listview">
+      <!-- List items will be dynamically added here -->
+  </ul>
+
+</div>
+
+
+</div>
+
+
+ 
+     
+        <div class="frame-container" style="height: auto;">
+
+
+    <div class="labels-container">
+      <span class="label" id="lbl1" style="color: brown;font-size: medium;font-weight: 800;">Label 1: 0.00</span>
+      <span class="label" id="lbl2"style="color: brown;font-size: medium;font-weight: 800;">Label 2: 0.00</span>
+    
+     
+    
+      <span class="label" id="lbl3"style="color: brown;font-size: medium;font-weight: 800;">Label 3: 0.00</span>
+      <span class="label" id="lbl4"style="color: brown;font-size: medium;font-weight: 800;">Label 4: 0.00</span>
+    
+      <span class="label" id="lbl5"style="color: brown;font-size: medium;font-weight: 800;">Label 5: 0.00</span>
+  
+      <div class="container">
+        <button class="green2" style="top: -40px; left: 650px; width: 120px; height: 50px;">
+          <i class="fa fa-reply"></i>Other
+        </button>
+
+        <button class="green5" style="top: -40px; left: 520px; width: 120px; height: 50px;">
+          <i class="fa fa-plus-circle"></i>Files
+        </button>
+        <br />
+        <br />
+      </div>
+    
+    </div>
+
+
+   <table id="listViewtbl" style="color: blue;">
+    <thead>
+      <tr>
+        <th>M</th>
+        <th>Code</th>
+        <th>Date</th>
+        <th>Desc</th>
+        <th>Exp</th>
+        <th>Coll</th>
+        <th>Vat</th>
+        <th>Sum Coll</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+    </tbody>
+  </table>
+
+    </div>  
+
+  </div>
+ 
+         <div class="right-panel2">
+          <div id="pdf-viewer-container" >
+              <iframe id="pdf-viewer" style="margin-left: 0%; position: absolute;" ></iframe>
+          </div>
+            </div>
+
+
+     
+            <script>
+              document.addEventListener('DOMContentLoaded', () => {
+                document.getElementById('add-to-cart').addEventListener('click', () => {
+                  alert("ffgfg");
+                  console.log('Button clicked');
+                  window.location.href = 'inv.html';  // Open the 'inv.html' page
+                });
+              });
+
+
+
+              function subaddinput(top, left, width, dataTag, label, type,BID) {
+    // Create the input block container
+    var inputBlock = document.createElement("div");
+    inputBlock.classList.add("input-block");
+
+    
+    // Set the position based on top, left, and width
+    inputBlock.style.position = "absolute";
+    inputBlock.style.top = top + "px";
+    inputBlock.style.left = left + "px";
+    inputBlock.style.width = width + "px";
+  
+
+    // Create the input element
+    var input = document.createElement("input");
+    input.type = type; // 'text', 'number', 'date', etc.
+    input.classList.add("input-field");
+    input.placeholder = " ";
+    input.setAttribute("data-tag", dataTag);
+    input.style.width = `${width}px`;
+    input.id=BID;
+
+    // Create the label element
+    var labelSpan = document.createElement("span");
+    labelSpan.classList.add("placeholder");
+    labelSpan.textContent = label;
+
+    // Append input and label to the container
+    inputBlock.appendChild(input);
+    inputBlock.appendChild(labelSpan);
+
+    // Append the new input block to the container (you can change "input-container" to your preferred element)
+    document.querySelector(".frame-container").appendChild(inputBlock);
+  }
+
+
+              
+            </script>
+
+</body>
+
+
+
+</html>

@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Navigation Menu</title>
+  <!-- Font Awesome for Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+ 
+  <script src="script.js"></script>
+
+</head>
+<body>
+ 
+  <button id="add-to-cart" style="top: 0px; left: 15px; width: 180px; height: 40px;">
+    <i class="fa fa-cart-plus"></i>Add to Cartssss
+  </button>
+  
+  <ul class="menu">
+    
+    <li><a href="#">Home</a></li>
+    <li><a href="#">About</a></li>
+  </ul>
+
+
+
+<div class="containerBox" style="top: 150px;">
+ 
+    <div class="left-panel">
+
+        <div id="treeviewContainer">
+        <ul id="treeview">
+            <li>
+                <span class="node" onclick="toggleNode(this)">Projects</span>
+                <ul class="nested">
+                    <li><span class="node" onclick="showNodeMessage(this)">ProjectOne</span></li>
+                    <li><span class="node" onclick="showNodeMessage(this)">ProjectTwo</span></li>
+                    <li><span class="node" onclick="showNodeMessage(this)">ProjectThree</span></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    </div>
+    
+
+    <!-- Right Panel -->
+    <div class="right-panel">
+      
+        <div class="frame-container"> 
+          
+
+          <div  class="centralize">
+            <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Calls to subaddinput here
+
+            subaddinput(15, 5, 100, "1", "Tax/Perform", "text","bt1");
+            subaddinput(55, 5, 120, "8", "Date.", "text","bt2");
+            subaddinput(85, 5, 120, "37", "Ref.", "text","bt3");
+
+            subaddinput(120, 5, 300, "2", "To Mr.", "text","bt4");
+            subaddinput(155, 5, 300, "3", "Project", "text","bt25");
+            subaddinput(55, 250, 200, "4", "AlHazam TRN.", "text","bt5");
+
+            subaddinput(190, 580, 75, "1", "Contract", "text","bt6");
+            subaddinput(230, 580, 75, "1", "Variation", "text","bt7");
+            subaddinput(270, 580, 75, "1", "Collected", "text","bt8");
+            subaddinput(310, 580, 75, "1", "Balance", "text","bt9");
+            subaddinput(190, 670, 75, "1", "Advance", "text","bt10");
+            subaddinput(230, 670, 75, "1", "Testing", "text","bt11");
+            subaddinput(270, 670, 75, "1", "Retention", "text","bt12");
+
+            subaddinput(190, 800, 100, "17", "Break Down", "text","bt13");
+            subaddinput(220, 800, 100, "18", "", "text","bt14");
+            subaddinput(250, 800, 100, "19", "", "text","bt15");
+            subaddinput(280, 800, 100, "20", "", "text","bt16");
+            subaddinput(310, 800, 100, "21", "", "text","bt17");
+            subaddinput(340, 800, 100, "22", "", "text","bt18");
+            subaddinput(190, 900, 50, "23", "%", "text","bt19");
+            subaddinput(220, 900, 50, "24", "%", "text","bt20");
+            subaddinput(250, 900, 50, "25", "%", "text","bt21");
+            subaddinput(280, 900, 50, "26", "%", "text","b22");
+            subaddinput(310, 900, 50, "27", "%", "text","bt23");
+            subaddinput(340, 900, 50, "28", "%", "text","bt24");
+     
+
+          });
+  
+
+              </script>
+         
+        
+<label id="lblrow" style="top: 335px; left: 700px; width: 200px; height: 200px; position: absolute; ">x</label>
+</div>
+
+
+
+
+
+
+
+
+<!-- partial:index.partial.html -->
+
+<!-- partial -->
+<div class="listview-container" style="top: 5px; left: 700px; width: 270px; height: 150px; position: absolute; background-color: aquamarine; ">
+  <ul id="listview">
+      <!-- List items will be dynamically added here -->
+  </ul>
+
+</div>
+
+
+</div>
+
+
+ 
+     
+        <div class="frame-container" style="height: auto;">
+
+
+
+
+
+
+      <div class="container">
+        <br />    
+        
+        
+    
+        <button onclick="createTable()" class="green2" style="top: -20px; left: 2px; width: 130px; height: 40px;">
+          <i class="fa fa-reply"></i>Normal
+        </button>
+        <button onclick="createTable2()" class="green5" style="top: -20px; left: 140px; width: 145px;height: 40px">
+          <i class="fa fa-plus-circle"></i>Break Dwon
+        </button>
+        <button onclick="createTable()">Click me</button>
+        <button onclick="saveDataAndPrint()" class="red" style="top: -20px; left: 430px; width: 100px;height: 40px">
+          <i class="fa fa-plus-circle"></i>New
+        </button>
+        <button onclick="saveDataAndPrint()" class="green" style="top: -20px; left: 530px; width: 100px;height: 40px">
+          <i class="fa fa-plus-circle"></i>Save
+        </button>
+        <button onclick="saveDataAndPrint()" class="green5" style="top: -20px; left: 630px; width: 100px;height: 40px">
+          <i class="fa fa-plus-circle"></i>Edit
+        </button>
+      </button>
+      <button onclick="saveDataAndPrint()" class="green6" style="top: -20px; left: 730px; width: 105px;height: 40px">
+        <i class="fa fa-plus-circle"></i>Delete
+      </button>
+        <br />
+       
+      </div>
+      <div id="tableContainer"></div>
+     
+
+    </div>  
+
+  </div>
+ 
+         <div class="right-panel2">
+          
+   <table id="listViewtbl" style="color: blue;">
+    <thead>
+      <tr>
+        <th>M</th>
+        <th>Code</th>
+        <th>Date</th>
+        <th>Desc</th>
+        <th>Exp</th>
+        <th>Coll</th>
+        <th>Vat</th>
+        <th>Sum Coll</th>
+      </tr>
+    </thead>
+    <tbody>
+     
+    </tbody>
+  </table>
+
+          <div id="pdf-viewer-container" >
+              <iframe id="pdf-viewer" style="margin-left: 0%; position: absolute;" ></iframe>
+          </div>
+            </div>
+
+            <button id="open-inv-btn">Open Treeview</button> 
+    
+    
+            <script>
+ 
+ function createTable() {
+    const tableContainer = document.getElementById("tableContainer");
+    const table = document.createElement("table");
+    table.classList.add("table", "table-condensed", "table-hover", "table-striped", "bootgrid-table");
+    
+    // Create the header row
+    const thead = table.createTHead();
+    const headerRow = thead.insertRow();
+    const headerCell1 = headerRow.insertCell();
+    headerCell1.textContent = "Contract Value";
+
+    const headerCell2 = headerRow.insertCell();
+    headerCell2.textContent = "25003330";
+    headerRow.style.color="rgb(13, 32, 196)";
+    headerRow.style.fontWeight = "900";
+    headerRow.style.fontSize="25px";
+ 
+
+    // Create the table body with 10 rows
+    const tbody = table.createTBody();
+    for (let i = 0; i < 15; i++) {
+        const row = tbody.insertRow();
+
+        row.style.color = "rgb(13, 32, 196)";
+        row.style.fontWeight = "800";
+        row.style.backgroundColor=  "rgba(13,55, 255, .3)"
+
+
+        const cell1 = row.insertCell();
+        cell1.style.padding = "0";
+        cell1.style.width = "auto";
+        cell1.contentEditable = true;
+
+    
+
+        // Create the second cell with input field
+        const cell2 = row.insertCell();
+        cell2.style.padding = "5px";
+        cell2.style.width = "230px";
+        cell2.style.height = "40px";
+    
+        const input = document.createElement("input");
+        input.type = "number";
+        input.classList.add("secondCell");
+        input.style.fontSize = "14px";
+            input.style.fontWeight = "800";
+            input.style.textAlign = "center"; // Align text to the center
+            input.style.color="blue";
+
+
+        if (i === 11) {
+            input.id = 'row11';
+            row.style.backgroundColor = "rgba(735,55, 255, .3)";
+            input.style.background="rgba(35,55, 255, .3)";
+            input.style.fontSize = "14px";
+            input.style.fontWeight = "800";
+            input.style.textAlign = "center"; // Align text to the center
+
+        } else if (i === 12) {
+            input.id = 'row12';
+            row.style.backgroundColor = "rgba(735,55, 255, .3)";
+            input.style.background="rgba(35,55, 255, .3)";
+        } else if (i === 14) {
+            input.id = 'row14';
+            row.style.backgroundColor = "rgba(735,55, 255, .3)";
+            input.style.background="rgba(35,55, 255, .3)";
+
+          } else if (i === 13) {
+            input.id = 'row13';
+            row.style.backgroundColor = "rgba(735,55, 255, .3)";
+            input.style.background="rgba(35,55, 255, .3)";
+
+            
+        } else {
+            input.id = `row${i}`;  // For other rows, assign ids like 'row1', 'row2', etc.
+        }
+
+    
+
+
+        input.oninput = function() {
+            updateValues();  // Your update logic goes here
+        };
+        cell2.appendChild(input);
+    }
+
+    // Append the table to the container
+    tableContainer.innerHTML = "";
+    tableContainer.appendChild(table);
+
+    
+}
+
+function createTable2() {
+    const tableContainer = document.getElementById("tableContainer");
+    const table = document.createElement("table");
+    table.classList.add("table", "table-condensed", "table-hover", "table-striped", "bootgrid-table");
+    
+    // Create the header row
+    const thead = table.createTHead();
+    const headerRow = thead.insertRow();
+    headerRow.style.color="rgb(13, 32, 196)";
+    headerRow.style.fontWeight = "900";
+    headerRow.style.fontSize="25px";
+
+
+    for (let i = 0; i < 2; i++) {
+    const headerCell = headerRow.insertCell();  // Insert a new header cell
+    // Optionally, add content or style to each header cell here
+}
+headerRow.cells[0].colSpan = 6; 
+headerRow.cells[0].textContent="Contract Value ";
+headerRow.cells[0].style.textAlign="right";
+headerRow.cells[1].textContent="25,000.00 ";
+headerRow.cells[1].style.textAlign="center";
+
+
+
+    // Create the table body with 10 rows
+    const tbody = table.createTBody();
+    for (let i = 0; i < 15; i++) {
+        const row = tbody.insertRow();
+
+        row.style.color = "rgb(13, 32, 196)";
+        row.style.fontWeight = "800";
+        row.style.backgroundColor=  "rgba(13,55, 255, .3)"
+
+
+        for (let i = 0; i < 6; i++) {
+    const cellx = row.insertCell();  // Create a new cell
+    cellx.style.padding = "0";       // Set padding
+    cellx.style.width = "90px";      // Set width
+    cellx.contentEditable = true;   // Make the cell editable
+}
+    
+
+
+
+
+        // Create the second cell with input field
+        const cell2 = row.insertCell();
+        cell2.style.padding = "5px";
+        cell2.style.width = "230px";
+        cell2.style.height = "40px";
+    
+        const input = document.createElement("input");
+        input.type = "number";
+        input.classList.add("secondCell");
+        input.style.fontSize = "14px";
+            input.style.fontWeight = "800";
+            input.style.textAlign = "center"; // Align text to the center
+            input.style.color="blue";
+
+
+        if (i === 11) {
+            input.id = 'row11';
+            row.style.backgroundColor = "rgba(735,55, 255, .3)";
+            input.style.background="rgba(35,55, 255, .3)";
+            input.style.fontSize = "14px";
+            input.style.fontWeight = "800";
+            input.style.textAlign = "center"; // Align text to the center
+
+        } else if (i === 12) {
+            input.id = 'row12';
+            row.style.backgroundColor = "rgba(735,55, 255, .3)";
+            input.style.background="rgba(35,55, 255, .3)";
+        } else if (i === 14) {
+            input.id = 'row14';
+            row.style.backgroundColor = "rgba(735,55, 255, .3)";
+            input.style.background="rgba(35,55, 255, .3)";
+
+          } else if (i === 13) {
+            input.id = 'row13';
+            row.style.backgroundColor = "rgba(735,55, 255, .3)";
+            input.style.background="rgba(35,55, 255, .3)";
+
+            
+        } else {
+            input.id = `row${i}`;  // For other rows, assign ids like 'row1', 'row2', etc.
+        }
+
+    
+
+
+        input.oninput = function() {
+            updateValues();  // Your update logic goes here
+        };
+        cell2.appendChild(input);
+    }
+
+    // Append the table to the container
+    tableContainer.innerHTML = "";
+    tableContainer.appendChild(table);
+
+    const values = ['NO', 'Description', 'Percentage', 'Value', 'Work done','Percentage', 'Value'];  // Array with values
+    // Array of values
+    const firstRow = table.rows[1]
+
+    for (let io = 0; io < 7; io++) {
+
+    firstRow.cells[io].style.background = "rgba(35,55, 255, .3)";  // Set background color
+    firstRow.cells[io].textContent = values[io];  // Set text content from the array
+    firstRow.cells[io].style.textAlign = "center";  // Align text to center
+    firstRow.cells[io].style.fontSize = "16px";
+    firstRow.cells[io].style.fontWeight = "900";
+    firstRow.cells[io].style.color = "Black";
+
+}
+const values2 = ['no', 1, 2, 3, 4, 5, 6, 7];  // Array with values
+
+Array.from(table.rows).slice(1).forEach((row, index) => {  // Exclude the first row (header)
+    row.cells[0].style.width = "20px";  // Set the width of the first cell
+    row.cells[0].textContent = values2[index];  // Set the text content from the array
+    row.cells[0].style.fontSize = "14px";  // Set font size
+    row.cells[0].style.fontWeight = "700";  // Set font weight
+    row.cells[0].style.textAlign = "center";  // Align text to center
+});
+
+
+}
+
+
+
+function updateValues() {
+       
+            let totalRow11 = 0;
+            let row11Value = 0;
+            let row12Value = 0;
+            let row13Value = 0;
+          
+            // Sum of all second cells from row 1 to row 10
+            const secondCells = document.querySelectorAll('.secondCell');
+            secondCells.forEach((cell, index) => {
+              if (index < 10) {  // Only sum the second cells from row 1 to 10
+                totalRow11 += parseFloat(cell.value) || 0;
+              }
+            
+            });
+        
+           
+
+
+          
+
+            // Set row 11 (sum of all second cells from rows 1 to 10)
+            document.getElementById('row11').value = totalRow11;
+     
+            // Set row 12 (5% of the value in row 11)
+            row11Value = totalRow11 * 0.05;
+            document.getElementById('row12').value = row11Value;
+        
+            // Set row 14 (sum of rows 11, 12, and 13)
+            row13Value = parseFloat(secondCells[13].value) || 0; // Get second cell value of row 13 (11th second cell)
+            let row14Value = totalRow11 + row11Value + row13Value;
+            document.getElementById('row14').value = row14Value;
+          }
+     
+
+
+
+
+          
+
+
+
+
+
+        function subaddinput(top, left, width, dataTag, label, type,BID) {
+    // Create the input block container
+    var inputBlock = document.createElement("div");
+    inputBlock.classList.add("input-block");
+
+    
+    // Set the position based on top, left, and width
+    inputBlock.style.position = "absolute";
+    inputBlock.style.top = top + "px";
+    inputBlock.style.left = left + "px";
+    inputBlock.style.width = width + "px";
+  
+
+    // Create the input element
+    var input = document.createElement("input");
+    input.type = type; // 'text', 'number', 'date', etc.
+    input.classList.add("input-field");
+    input.placeholder = " ";
+    input.setAttribute("data-tag", dataTag);
+    input.style.width = `${width}px`;
+    input.id=BID;
+
+    // Create the label element
+    var labelSpan = document.createElement("span");
+    labelSpan.classList.add("placeholder");
+    labelSpan.textContent = label;
+
+    // Append input and label to the container
+    inputBlock.appendChild(input);
+    inputBlock.appendChild(labelSpan);
+
+    // Append the new input block to the container (you can change "input-container" to your preferred element)
+    document.querySelector(".frame-container").appendChild(inputBlock);
+  }
+
+
+     </script>
+
+
+</body>
+
+
+
+</html>
